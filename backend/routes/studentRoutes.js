@@ -1,35 +1,33 @@
 import bcrypt from "bcrypt";
-import { student } from "../models/Student.js";
 import express from "express";
+import { loginStudent} from '../controllers/studentController.js';
+import {isStudent} from '../controllers/studentController.js';
+import { student } from "../models/studentModels.js";
 
 const router = express.Router();
 
-router.post("/addstudent", async (req, res) => {
-  try {
-    const { rollno, email, password, grade } = req.body;
-    const hashedPassword = await bcrypt.hash(password, 10);
-    await student.create({
-      rollno,
-      email,
-      password: hashedPassword,
-      grade,
-    });
-    res.json({ success: true, message: "Student added." });
-  } catch (err) {
-    console.error(err);
-    return res
-      .status(500)
-      .json({ success: false, message: "Internal Server Error" });
-  }
-});
-router.get("/display", async (req, res) => {
-  try {
-    const students = await student.find();
-    res.json(students);
-  } catch (error) {
-    console.error("Error fetching student data:", error);
-    res.status(500).json({ message: "Internal server error" });
-  }
-});
+router.get("/login", async (req, res) => {
+    const { email, password } = req.query; 
 
+    try {
+        const user = await student.findOne({ email });
+        if (!user) {
+            return res.status(401).json({ message: "Invalid email or password" });
+        }
+        const passwordMatch = await bcrypt.compare(password, user.password);
+
+        if (passwordMatch) {
+            return res.status(200).json({ message: "Login successful", user });
+        } else {
+            return res.status(401).json({ message: "Invalid email or password" });
+        }
+    } catch (error) {
+        console.error("Error occurred during login:", error);
+        return res.status(500).json({ message: "Internal server error" });
+    }
+});
+router.post('/student/login', loginStudent);
+router.get('/', isStudent, (req, res) => {
+  res.send('Student Route');
+});
 export { router as studentRouter };
