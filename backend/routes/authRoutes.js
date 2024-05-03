@@ -1,7 +1,7 @@
 import express from 'express';
 import {
-  studentsignup,
-  studentlogin,
+  usersignup,
+  userlogin,
   forgotPassword,
 } from '../controllers/authController.js';
 import {
@@ -10,8 +10,8 @@ import {
 
 const router = express.Router();
 
-router.post('/student-signup', studentsignup);
-router.post('/student-login', studentlogin);
+router.post('/user-signup', usersignup);
+router.post('/user-login', userlogin);
 router.post('/forgotpass', forgotPassword);
 router.get('/studverify', verifyStudEmail);
 
