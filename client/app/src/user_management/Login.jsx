@@ -1,5 +1,5 @@
     import React, { useState, useEffect } from 'react';
-    import './login.css'
+    import './login.css';
     import '@fortawesome/fontawesome-free/css/all.css';
 
 
@@ -17,6 +17,11 @@
             };
 
             const handleSignIn = () => {
+                container.classList.remove("right-panel-active");
+                setIsSignUp(false);
+            };
+
+            const handleLogin = () => {
                 container.classList.remove("right-panel-active");
                 setIsSignUp(false);
             };
