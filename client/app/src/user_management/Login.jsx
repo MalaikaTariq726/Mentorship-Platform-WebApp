@@ -1,5 +1,5 @@
     import React, { useState, useEffect } from 'react';
-    import './login.css'
+    import '../CSS/login.css'
     import '@fortawesome/fontawesome-free/css/all.css';
 
 
@@ -47,7 +47,7 @@
                                     <input type="text" placeholder="Name" />
                                     <input type="email" placeholder="Email" />
                                     <input type="password" placeholder="Password" />
-                                    <button>Sign Up</button>
+                                    <button className='loginBtn'>Sign Up</button>
                                 </>
                             ) : (
                                 <>
@@ -61,7 +61,7 @@
                                     <input type="email" placeholder="Email" />
                                     <input type="password" placeholder="Password" />
                                     <a href="#">Forgot your password?</a>
-                                    <button>Sign In</button>
+                                    <button className='loginBtn'>Sign In</button>
                                 </>
                             )}
                         </form>
