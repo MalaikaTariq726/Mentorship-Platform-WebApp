@@ -1,9 +1,5 @@
     import React, { useState, useEffect } from 'react';
-<<<<<<< HEAD
-    import './login.css';
-=======
     import '../CSS/login.css'
->>>>>>> 92d3414a5c08e86cf4b37a02903908a22828fc4e
     import '@fortawesome/fontawesome-free/css/all.css';
 
 
