@@ -1,12 +1,8 @@
 import React, { createContext, useContext } from 'react';
-import CreateAxiosInstance from '../utils/axiosInstance';
-import { useSnackbar } from '../utils/snackbarContextProvider';
+import axios from 'axios';
 
 const UserContext = createContext();
-
 const UserProvider = ({ children }) => {
-  const { show } = useSnackbar();
-  const axiosInstance = CreateAxiosInstance();
   
 //   const getStoredToken = () => {
 //     try {
@@ -29,36 +25,36 @@ const UserProvider = ({ children }) => {
 
   const googleLoginUser = async (data) => {
     let response = false;
-    await axiosInstance
-      .post('/backend/googleLogin', data)
+    await axios
+      .post('http://localhost:7373/auth/gooleLogin', data)
       .then((res) => {
         response = res.data;
-        show('Nomination created successfully', 'success');
+        alert('Google login successfully', 'success');
       })
       .catch((error) => {
-        show(error.message, 'error');
+        alert(error.message, 'error');
       });
     return response;
   };
 
   const loginUser = async (data) => {
     let response = false;
-    await axiosInstance
-      .post('/backend/login', data)
+    axios
+      .post('http://localhost:7373/auth/login', data)
       .then((res) => {
         response = res.data;
-        show('Signed in successfully', 'success');
+        alert('Signed in successfully', 'success');
       })
       .catch((error) => {
-        show(error.message, 'error');
+        alert(error.message, 'error');
       });
     return response;
   };
 
   const verifyToken = async (token) => {
     let response = false;
-    await axiosInstance
-      .get('/backend/verify', {
+    await axios
+      .get('http://localhost:7373/auth/verify', {
         params: {
           token,
         },
@@ -67,14 +63,14 @@ const UserProvider = ({ children }) => {
         response = res.data;
       })
       .catch((error) => {
-        show(error.message, 'error');
+        alert(error.message, 'error');
       });
     return response;
   };
 
   const contextValues = {
-    loginUser,
     googleLoginUser,
+    loginUser,
     verifyToken,
   };
 
