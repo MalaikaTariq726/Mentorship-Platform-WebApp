@@ -35,6 +35,7 @@ const Login = () => {
 
   const handleGoogleLogin = () => {
     window.open("http://localhost:7373/auth/google/callback", "_self");
+    //googleLoginUser();
   };
 
   const handleLogin = () => {

@@ -23,19 +23,6 @@ const UserProvider = ({ children }) => {
 //   const jwt = getStoredToken();
 
 
-  const googleLoginUser = async (data) => {
-    let response = false;
-    await axios
-      .post('http://localhost:7373/auth/gooleLogin', data)
-      .then((res) => {
-        response = res.data;
-        alert('Google login successfully', 'success');
-      })
-      .catch((error) => {
-        alert(error.message, 'error');
-      });
-    return response;
-  };
 
   const loginUser = async (data) => {
     let response = false;
@@ -69,7 +56,6 @@ const UserProvider = ({ children }) => {
   };
 
   const contextValues = {
-    googleLoginUser,
     loginUser,
     verifyToken,
   };
