@@ -226,10 +226,8 @@ input {
 	transform: translateX(0);
 	transition: transform 0.6s ease-in-out;
 	background: linear-gradient(to right, rgb(69, 126, 249), rgb(61, 61, 244));
-	color: white; /* Set text color to contrast with the gradient background */
+	color: white;
 }
-
-
 
 .overlay-left {
 	transform: translateX(-20%);

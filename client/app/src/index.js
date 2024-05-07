@@ -7,7 +7,8 @@ import { UserProvider } from './services/userService';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <UserProvider>  <App /></UserProvider>
-  
+    <UserProvider>
+    <App />
+    </UserProvider>
   </React.StrictMode>
 );
