@@ -14,4 +14,4 @@ const Connection = async () => {
   }
 };
 
-export default Connection; 
+export default Connection;
