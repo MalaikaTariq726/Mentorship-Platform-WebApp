@@ -12,15 +12,7 @@ const ForgotPassword = () => {
   const [confirmPassword, setConfirmPassword] = useState();
   const [passwordsMatch, setPasswordsMatch] = useState(true);
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleConfirmPasswordChange = (e) => {
-    const confirmPasswordValue = e.target.value;
-    setConfirmPassword(confirmPasswordValue);
-    setPasswordsMatch(confirmPasswordValue === password);
-  };
+ 
 
   const handleForgotPassword = () => {
     if (email && password && confirmPassword) {
