@@ -1,5 +1,7 @@
+
 import '../CSS/home.css';
 const Home = () => {
+
     const handleButtonClick = () => {
         window.location.href = '/signin';
     };

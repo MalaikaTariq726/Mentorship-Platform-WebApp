@@ -34,7 +34,7 @@
   z-index: var(--z-fixed);
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding-top: 1rem;
 }
 
 .imgLogo {

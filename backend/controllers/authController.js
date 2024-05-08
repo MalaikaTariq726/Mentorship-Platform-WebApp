@@ -9,7 +9,6 @@ const JWT_EXPIRATION = "1m";
 const login = async (req, res) => {
   const { email, password } = req.body;
   try {
-    console.log(email);
     const user = await userdb.findOne({ email });
 
     if (!user) {
@@ -35,27 +34,70 @@ const login = async (req, res) => {
 };
 
 const signup = async (req, res) => {
-  console.log(req.body);
   const { email, password, role, name } = req.body;
   try {
-      const existingUser = await userdb.findOne({ email });
-      if (existingUser) {
-          return res.status(400).json({ message: 'User already exists' });
-      }
-      const hashedPassword = await bcrypt.hash(password, 10);
-      const newUser = new userdb({
-          email,
-          password: hashedPassword,
-          role,
-          name
-      });
-      await newUser.save();
-      return res.status(200).json({ message: 'User Accout Created Successfully' });
+    const existingUser = await userdb.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: "User already exists" });
+    }
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = new userdb({
+      email,
+      password: hashedPassword,
+      role,
+      name,
+    });
+    await newUser.save();
+    return res
+      .status(200)
+      .json({ message: "User Accout Created Successfully" });
   } catch (error) {
-      console.error(error);
-      return res.status(500).json({ message: 'Internal server error' });
+    console.error(error);
+    return res.status(500).json({ message: "Internal server error" });
   }
 };
 
-export{ signup as signup} ;
+const updateRole = async (req, res) => {
+  const { role, email } = req.body;
+  try {
+    const user = await userdb.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+    user.role = role;
+
+    const updatedUser = await user.save();
+
+    return res.status(200).json({ result: updatedUser });
+  } catch (error) {
+    console.error("Error updating user role:", error);
+    return res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+const forgotPassword = async (req, res) => {
+  const { password, email } = req.body;
+  try {
+    const user = await userdb.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    user.password = hashedPassword;
+
+    const updatedUser = await user.save();
+
+    return res.status(200).json({ result: updatedUser });
+  } catch (error) {
+    console.error("Error updating password:", error);
+    return res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+export { forgotPassword as forgotPassword }
+export { updateRole as updateRole };
+export { signup as signup };
 export { login as login };

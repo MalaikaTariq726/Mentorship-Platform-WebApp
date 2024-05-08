@@ -33,20 +33,31 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-configurePassport();
+configurePassport(passport);
 
 app.use(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:3000/home",
+    successRedirect: "/googleLogin",
     failureRedirect: "http://localhost:3000/login",
   })
 );
+
+app.get('/googleLogin', (req, res) => {
+  const { user, token, isUserExist } = req.user;
+  console.log(user, token, isUserExist);
+  if(!isUserExist) {
+    res.redirect(`http://localhost:3000/setrole?email=${user.email}`);
+  } else {
+    res.redirect('http://localhost:3000/home');
+  }
+});
 
 app.use(
   "/auth/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
+
 // ------------------------------------------------------------------
 
 app.use("/auth", authRoutes);

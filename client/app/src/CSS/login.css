@@ -5,7 +5,7 @@
 }
 
 body {
-	background: #f6f5f7;
+	background: #ffffff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -46,7 +46,7 @@ a {
 .loginBtn ,.ghost{
 	border-radius: 20px;
 	border: 1px solid rgb(69, 126, 249);
-	background-color:  rgb(69, 126, 249);
+	background: linear-gradient(to right, rgb(69, 126, 249), rgb(61, 61, 244));
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -63,9 +63,9 @@ a {
 .loginBtn:hover ,.ghost:hover{
     border: 2px solid  rgb(69, 126, 249);
     color:  rgb(69, 126, 249);
-	background-color: #fff;
+	background: #fff;
     cursor: pointer;
-   box-shadow: 0 15px 25px rgba(111, 67, 181, 0.35);
+	box-shadow: 0 15px 25px rgba(69, 126, 249, 0.3);
 }
 
 button:focus {
@@ -108,8 +108,8 @@ input {
 .container {
 	background-color: #fff;
 	border-radius: 10px;
-  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-			0 10px 10px rgba(0,0,0,0.22);
+	box-shadow: 0 14px 28px rgba(69, 126, 249, 0.25),
+	0 10px 10px rgba(69, 126, 249, 0.22);
 	position: relative;
 	overflow: hidden;
 	width: 868px;
