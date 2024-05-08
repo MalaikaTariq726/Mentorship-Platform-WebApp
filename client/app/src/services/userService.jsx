@@ -1,6 +1,5 @@
 import React, { createContext, useContext } from 'react';
 import axios from 'axios';
-
 const UserContext = createContext();
 const UserProvider = ({ children }) => {
   
@@ -22,13 +21,37 @@ const UserProvider = ({ children }) => {
 
 //   const jwt = getStoredToken();
 
-
+  const googleLoginUser = async (data) => {
+    let response = false;
+    await axios
+      .post('http://localhost:7373/auth/gooleLogin', data)
+      .then((res) => {
+        response = res.data;
+        alert('Google login successfully', 'success');
+      })
+      .catch((error) => {
+        alert(error.message, 'error');
+      });
+    return response;
+  };
 
   const loginUser = async (data) => {
     let response = false;
     axios
       .post('http://localhost:7373/auth/login', data)
       .then((res) => {
+        response = res.data;
+        alert('Signed in successfully', 'success');
+      })
+      .catch((error) => {
+        alert(error.message, 'error');
+      });
+    return response;
+    };
+  const signupUser = async (data) => {
+    let response = false;
+       await axios.post('http://localhost:7373/auth/signup', data).then((res) => {
+        console.log(res.data);
         response = res.data;
         alert('Signed in successfully', 'success');
       })
@@ -58,6 +81,8 @@ const UserProvider = ({ children }) => {
   const contextValues = {
     loginUser,
     verifyToken,
+signupUser,
+googleLoginUser,
   };
 
   return (

@@ -1,4 +1,5 @@
 import Connection from "./db.js";
+
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
@@ -6,7 +7,6 @@ import authRoutes from "./routes/authRoutes.js";
 import session from "express-session";
 import passport from "passport";
 import configurePassport from "./passportConfig.js";
-
 dotenv.config();
 Connection();
 
