@@ -12,10 +12,6 @@ const ForgotPassword = () => {
   const [confirmPassword, setConfirmPassword] = useState();
   const [passwordsMatch, setPasswordsMatch] = useState(true);
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
   const handleConfirmPasswordChange = (e) => {
     const confirmPasswordValue = e.target.value;
     setConfirmPassword(confirmPasswordValue);
@@ -52,7 +48,7 @@ const ForgotPassword = () => {
               type="text"
               placeholder="Password"
               value={password}
-              onChange={handlePasswordChange}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
             <input
