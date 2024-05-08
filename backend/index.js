@@ -45,7 +45,6 @@ app.use(
 
 app.get('/googleLogin', (req, res) => {
   const { user, token, isUserExist } = req.user;
-  console.log(user, token, isUserExist);
   if(!isUserExist) {
     res.redirect(`http://localhost:3000/setrole?email=${user.email}`);
   } else {

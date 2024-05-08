@@ -47,10 +47,11 @@ const Login = () => {
 
   const handleLogin = () => {
     loginUser({ email, password });
+    navigate("/home");
   };
 
   const handleForgotPassword = () => {
-    navigate("/forgotPassword");
+    navigate("/forgot");
   };
 
   return (

@@ -22,7 +22,7 @@ const ForgotPassword = () => {
     if (email && password && confirmPassword) {
       if (password === confirmPassword) {
         forgotPassword({ password, email });
-        navigate("/login");
+        navigate("/signin");
       } else {
         setPasswordsMatch(false);
       }
