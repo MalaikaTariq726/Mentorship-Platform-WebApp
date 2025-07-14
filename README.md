@@ -84,20 +84,15 @@ npm start
 ## 🖼️ Screenshots
 
 > Folowing are the screen shots of the Application
-### 📚 Main Page
-[!MaimPage][https://github.com/MalaikaTariq726/Mentorship-Platform-WebApp/blob/c76c9a5d05bc144d079e440f5fe73742b22cf640/images/mentorship%20(10).png]
 
-### SignIn/SignUp
-[!signIn][https://github.com/MalaikaTariq726/Mentorship-Platform-WebApp/blob/c76c9a5d05bc144d079e440f5fe73742b22cf640/images/mentorship%20(11).png]
+### 📚 Main Page  
+![MainPage](https://github.com/MalaikaTariq726/Mentorship-Platform-WebApp/blob/c76c9a5d05bc144d079e440f5fe73742b22cf640/images/mentorship%20(10).png?raw=true)
 
-[!signUp][https://github.com/MalaikaTariq726/Mentorship-Platform-WebApp/blob/c76c9a5d05bc144d079e440f5fe73742b22cf640/images/mentorship%20(1).png]
+### 🔐 SignIn / SignUp  
+![SignIn](https://github.com/MalaikaTariq726/Mentorship-Platform-WebApp/blob/c76c9a5d05bc144d079e440f5fe73742b22cf640/images/mentorship%20(11).png?raw=true)  
+![SignUp](https://github.com/MalaikaTariq726/Mentorship-Platform-WebApp/blob/c76c9a5d05bc144d079e440f5fe73742b22cf640/images/mentorship%20(1).png?raw=true)
 
-##Project Page
-
-[!proectpages][https://github.com/MalaikaTariq726/Mentorship-Platform-WebApp/blob/c76c9a5d05bc144d079e440f5fe73742b22cf640/images/mentorship%20(6).png]
-
-[!proectpages][https://github.com/MalaikaTariq726/Mentorship-Platform-WebApp/blob/c76c9a5d05bc144d079e440f5fe73742b22cf640/images/mentorship%20(8).png]
-
-[!proectpages][https://github.com/MalaikaTariq726/Mentorship-Platform-WebApp/blob/c76c9a5d05bc144d079e440f5fe73742b22cf640/images/mentorship%20(9).png]
-
----
+### 📁 Project Pages  
+![ProjectPage1](https://github.com/MalaikaTariq726/Mentorship-Platform-WebApp/blob/c76c9a5d05bc144d079e440f5fe73742b22cf640/images/mentorship%20(6).png?raw=true)  
+![ProjectPage2](https://github.com/MalaikaTariq726/Mentorship-Platform-WebApp/blob/c76c9a5d05bc144d079e440f5fe73742b22cf640/images/mentorship%20(8).png?raw=true)  
+![ProjectPage3](https://github.com/MalaikaTariq726/Mentorship-Platform-WebApp/blob/c76c9a5d05bc144d079e440f5fe73742b22cf640/images/mentorship%20(9).png?raw=true)
